@@ -1,0 +1,7 @@
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\bin\Debug\fizzbuzz.dll
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\bin\Debug\fizzbuzz.pdb
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\bin\Debug\nunit.framework.dll
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\bin\Debug\nunit.framework.xml
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\obj\Debug\FizzBuzzKata.csprojResolveAssemblyReference.cache
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\obj\Debug\fizzbuzz.dll
+C:\Users\mdu\Documents\Visual Studio 2015\Projects\Kata\FizzBuzzKata\fizzbuzz\obj\Debug\fizzbuzz.pdb
