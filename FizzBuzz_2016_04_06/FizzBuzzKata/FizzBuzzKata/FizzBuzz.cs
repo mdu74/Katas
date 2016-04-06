@@ -6,6 +6,11 @@ namespace FizzBuzzKata
     {
         public string IsFizzBuzz(string input)
         {
+            if (int.Parse(input) % 3 == 0 && int.Parse(input) % 5 == 0)
+            {
+                return "FizzBuzz";
+            }
+
             if (int.Parse(input)%3 == 0)
             {
                 return "Fizz";
@@ -15,6 +20,7 @@ namespace FizzBuzzKata
             {
                 return "Buzz";
             }
+
             return input;
 
         }
