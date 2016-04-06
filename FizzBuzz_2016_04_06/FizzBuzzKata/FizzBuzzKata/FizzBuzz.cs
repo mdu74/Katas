@@ -11,7 +11,7 @@ namespace FizzBuzzKata
                 return "Fizz";
             }
             
-            if (int.Parse(input) == 5)
+            if (int.Parse(input)%5 == 0)
             {
                 return "Buzz";
             }

@@ -86,8 +86,23 @@ namespace FizzBuzzKata
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "6";
+            var input = "9";
             var expected = "Fizz";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = fizzBuzz.IsFizzBuzz(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void IsFizzBuzz_GivenDivisibleByFive_ShouldBuzz()
+        {
+            //---------------Set up test pack-------------------
+            var fizzBuzz = CreateFizzBuzz();
+            var input = "10";
+            var expected = "Buzz";
             //---------------Assert Precondition----------------
 
             //---------------Execute Test ----------------------
