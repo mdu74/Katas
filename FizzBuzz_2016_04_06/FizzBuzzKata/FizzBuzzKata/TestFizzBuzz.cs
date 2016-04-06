@@ -21,12 +21,13 @@ namespace FizzBuzzKata
             Assert.AreEqual(input, result);
         }
         
-        [Test]
-        public void IsFizzBuzz_GivenThree_ShouldReturnFizz()
+        [TestCase("3")]
+        [TestCase("6")]
+        [TestCase("9")]
+        public void IsFizzBuzz_GivenNumberIsDivisibleByThree_ShouldReturnFizz(string input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "3";
             var expected = "Fizz";
             //---------------Assert Precondition----------------
 
