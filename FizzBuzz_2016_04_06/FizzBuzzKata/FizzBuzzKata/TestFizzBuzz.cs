@@ -37,12 +37,13 @@ namespace FizzBuzzKata
             Assert.AreEqual(expected, result);
         }
         
-        [Test]
-        public void IsFizzBuzz_GivenFive_ShouldReturnBuzz()
+        [TestCase("5")]
+        [TestCase("10")]
+        [TestCase("20")]
+        public void IsFizzBuzz_GivenNumberIsDivisibleByFive_ShouldReturnBuzz(string input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "5";
             var expected = "Buzz";
             //---------------Assert Precondition----------------
 
@@ -52,42 +53,13 @@ namespace FizzBuzzKata
             Assert.AreEqual(expected, result);
         }
 
-        [Test]
-        public void IsFizzBuzz_GivenDivisibleByThree_ShouldReturnFizz()
+        [TestCase("15")]
+        [TestCase("30")]
+        [TestCase("75")]
+        public void IsFizzBuzz_GivenIsDivisibleByBothThreeAndFive_ShouldFizzBuzz(string input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "9";
-            var expected = "Fizz";
-            //---------------Assert Precondition----------------
-
-            //---------------Execute Test ----------------------
-            var result = fizzBuzz.IsFizzBuzz(input);
-            //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result);
-        }
-
-        [Test]
-        public void IsFizzBuzz_GivenDivisibleByFive_ShouldBuzz()
-        {
-            //---------------Set up test pack-------------------
-            var fizzBuzz = CreateFizzBuzz();
-            var input = "10";
-            var expected = "Buzz";
-            //---------------Assert Precondition----------------
-
-            //---------------Execute Test ----------------------
-            var result = fizzBuzz.IsFizzBuzz(input);
-            //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result);
-        }
-
-        [Test]
-        public void IsFizzBuzz_GivenIsDivisibleByBothThreeAndFive_ShouldFizzBuzz()
-        {
-            //---------------Set up test pack-------------------
-            var fizzBuzz = CreateFizzBuzz();
-            var input = "30";
             var expected = "FizzBuzz";
             //---------------Assert Precondition----------------
 
