@@ -27,7 +27,7 @@ namespace FizzBuzzKata
 
         private static bool IsDivisibleByBothThreeAndFive(string input)
         {
-            return int.Parse(input) % 3 == 0 && int.Parse(input) % 5 == 0;
+            return IsDivisibleByThree(input) && IsDivisibleByFive(input);
         }
 
         private static bool IsDivisibleByThree(string input)
