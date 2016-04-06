@@ -1,0 +1,7 @@
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\bin\Debug\FizzBuzzKata.dll
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\bin\Debug\FizzBuzzKata.pdb
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\bin\Debug\nunit.framework.dll
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\bin\Debug\nunit.framework.xml
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\obj\Debug\FizzBuzzKata.csprojResolveAssemblyReference.cache
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\obj\Debug\FizzBuzzKata.dll
+C:\Systems\Katas\FizzBuzz_2016_04_06\FizzBuzzKata\FizzBuzzKata\obj\Debug\FizzBuzzKata.pdb
