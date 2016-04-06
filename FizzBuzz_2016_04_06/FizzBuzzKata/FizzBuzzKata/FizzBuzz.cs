@@ -10,6 +10,10 @@ namespace FizzBuzzKata
             {
                 return "Fizz";
             }
+            if (int.Parse(input) == 5)
+            {
+                return "Buzz";
+            }
             return input;
 
         }
