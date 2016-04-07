@@ -3,13 +3,13 @@ using System.Drawing;
 
 namespace MyLibrary
 {
-    public class Porsche : ICar
+    public class Porsche : Car
     {
-        public void Start()
+        public Porsche() : base("Porsche", "Cayenne", 2015, Color.Black)
         {
-            Console.WriteLine("This is AWESOME!!!");
+
         }
-        public void PressAccelerator(int distance)
+        public override void PressAccelerator(int distance)
         {
             if (distance <= 6)
             {
@@ -22,7 +22,7 @@ namespace MyLibrary
             
         }
 
-        public void PressBrake(int pressure)
+        public override void PressBrake(int pressure)
         {
             if (pressure <= 5)
             {
@@ -33,32 +33,6 @@ namespace MyLibrary
                 Console.WriteLine("Brakes are set high: Carefull you're not ready for this");
             }
             
-        }
-
-        public string Make
-        {
-            get
-            {
-                return "Porsche";
-            }
-        }
-
-        public string Model
-        {
-            get
-            {
-                return "Cayanne";
-            }
-        }
-
-        public Color PaintColor
-        {
-            get; set;
-        }
-
-        public int Year
-        {
-            get { return 2015; }
         }
     }
 }

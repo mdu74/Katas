@@ -11,8 +11,8 @@ namespace MyApp
             Car[] cars =
             {
                 new VwPolo {Paint = Color.Blue},
-                //new Junk {Paint = Color.Aquamarine},
-                //new Porsche {Paint = Color.Red},
+                new Junk {Paint = Color.Aquamarine},
+                new Porsche {Paint = Color.Red},
             };
 
             foreach (Car car in cars)
