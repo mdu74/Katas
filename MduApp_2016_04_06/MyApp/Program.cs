@@ -8,14 +8,14 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
-            ICar[] cars =
+            Car[] cars =
             {
-                new VwPolo {PaintColor = Color.Blue},
-                new Junk {PaintColor = Color.Aquamarine},
-                new Porsche {PaintColor = Color.Red},
+                new VwPolo {Paint = Color.Blue},
+                //new Junk {Paint = Color.Aquamarine},
+                //new Porsche {Paint = Color.Red},
             };
 
-            foreach (ICar car in cars)
+            foreach (Car car in cars)
             {
                 PrintCarInfo(car);
                 car.Start();
@@ -25,9 +25,9 @@ namespace MyApp
 
         }        
 
-        static void PrintCarInfo(ICar car)
+        static void PrintCarInfo(Car car)
         {
-            Console.WriteLine("Here is a {0} {1} {2} {3}", car.PaintColor, car.Make, car.Model, car.Year);
+            Console.WriteLine("Here is a {0} {1} {2} {3}", car.Paint, car.Make, car.Model, car.Year);
         }
     }
 }

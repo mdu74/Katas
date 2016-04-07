@@ -3,48 +3,22 @@ using System.Drawing;
 
 namespace MyLibrary
 {
-    public class VwPolo : ICar
+    public class VwPolo : Car
     {
-        public void Start()
+        public VwPolo() : base("VW", "Polo", 2015, Color.DarkGoldenrod)
         {
-            Console.WriteLine("Ready to GO!!!");
+            
         }
-
-        public void PressAccelerator(int distance)
+        
+        public override void PressAccelerator(int distance)
         {
             Console.WriteLine("Yea!!!!");
         }
 
-        public void PressBrake(int pressure)
+        public override void PressBrake(int pressure)
         {
             Console.WriteLine("STOP!!!");
         }
-
-        public Color PaintColor { get; set; }
-
-        public string Make
-        {
-            get
-            {
-                return "VW";
-            }
-        }
-
-        public string Model
-        {
-            get
-            {
-                return "Polo";
-            }
-        }
-
-        public int Year
-        {
-            get
-            {
-                return 2015;
-            }
-        }
-
+        
     }
 }

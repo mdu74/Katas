@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="Junk.cs" />
     <Compile Include="Porsche.cs" />
     <Compile Include="VwPolo.cs" />
