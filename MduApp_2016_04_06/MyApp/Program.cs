@@ -1,33 +1,12 @@
-﻿using System;
-using System.Drawing;
-using MyLibrary;
-
-namespace MyApp
+﻿namespace MyApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            ICar[] cars =
-            {
-                new VwPolo {Paint = Color.Blue},
-                new Junk {Paint = Color.Aquamarine},
-                new Porsche {Paint = Color.Red},
-            };
-
-            foreach (ICar car in cars)
-            {
-                PrintCarInfo(car);
-                car.Start();
-                car.PressAccelerator(8);
-                car.PressBrake(8);
-            }
-
+            KeystrokeHandler keystrokeHandler = new KeystrokeHandler();
+            keystrokeHandler.Run();
         }        
-
-        static void PrintCarInfo(ICar car)
-        {
-            Console.WriteLine("Here is a {0} {1} {2} {3}", car.Paint, car.Make, car.Model, car.Year);
-        }
+        
     }
 }
