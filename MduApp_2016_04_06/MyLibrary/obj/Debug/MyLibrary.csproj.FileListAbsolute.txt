@@ -1,0 +1,5 @@
+C:\Users\mdu\Documents\MduApp\MyLibrary\bin\Debug\MyLibrary.dll
+C:\Users\mdu\Documents\MduApp\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
+C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.pdb
