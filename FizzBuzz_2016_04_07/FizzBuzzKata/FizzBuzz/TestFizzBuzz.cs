@@ -65,5 +65,20 @@ namespace FizzBuzz
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void IsFizzBuzz_GivenDivisibleByThree_ShouldReturnFizz()
+        {
+            //---------------Set up test pack-------------------
+            var fizzBuzz = new FizzBuzz();
+            var input = "6";
+            var expected = "Fizz";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = fizzBuzz.IsFizzBuzz(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
     }
 }
