@@ -8,6 +8,8 @@ namespace MyApp
         {
             KeystrokeHandler keystrokeHandler = new KeystrokeHandler();
             keystrokeHandler.OnKey = GotKey;
+            keystrokeHandler.OnQuitting = OnQuit;
+
             keystrokeHandler.Run();
         }
 
@@ -15,6 +17,11 @@ namespace MyApp
         {
             Console.WriteLine("Got a key: {0}", key);
         }
-        
+
+        static void OnQuit()
+        {
+            Console.WriteLine("Quitting");
+        }
+
     }
 }

@@ -2,11 +2,13 @@
 
 namespace MyApp
 {
+    public delegate void KeypressDelegate(char key);
+    public delegate void QuitDelegate();
+
     public class KeystrokeHandler
     {
-        public delegate void KeypressDelegate(char key);
-
         public KeypressDelegate OnKey;
+        public QuitDelegate OnQuitting;
 
         public void Run()
         {
@@ -19,13 +21,17 @@ namespace MyApp
 
                 if ('q' == key)
                 {
+                    if (null != OnQuitting)
+                    {
+                        OnQuitting();
+                    }
                     break;
                 }
 
                 if (null != OnKey)
-                {
+                    
                     OnKey(key);
-                }
+                
             }
 
         }
