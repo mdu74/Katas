@@ -9,3 +9,8 @@ C:\Users\mdu\Documents\MduApp\MyApp\bin\Debug\MyLibrary.pdb
 C:\Systems\Katas\MduApp_2016_04_06\MyApp\bin\Debug\MyApp.exe.config
 C:\Systems\Katas\MduApp_2016_04_06\MyApp\obj\Debug\MyApp.exe
 C:\Systems\Katas\MduApp_2016_04_06\MyApp\obj\Debug\MyApp.pdb
+C:\Systems\Katas\MduApp_2016_04_06\MyApp\bin\Debug\MyApp.exe
+C:\Systems\Katas\MduApp_2016_04_06\MyApp\bin\Debug\MyApp.pdb
+C:\Systems\Katas\MduApp_2016_04_06\MyApp\bin\Debug\MyLibrary.dll
+C:\Systems\Katas\MduApp_2016_04_06\MyApp\bin\Debug\MyLibrary.pdb
+C:\Systems\Katas\MduApp_2016_04_06\MyApp\obj\Debug\MyApp.csprojResolveAssemblyReference.cache

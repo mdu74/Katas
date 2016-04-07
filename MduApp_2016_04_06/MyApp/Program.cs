@@ -12,16 +12,15 @@ namespace MyApp
             {
                 new VwPolo {PaintColor = Color.Blue},
                 new Junk {PaintColor = Color.Aquamarine},
+                new Porsche {PaintColor = Color.Red},
             };
 
             foreach (ICar car in cars)
             {
                 PrintCarInfo(car);
                 car.Start();
-                car.PressAccelerator(3);
-                car.PressAccelerator(20);
-                car.PressBrake(3);
-                car.PressBrake(10);
+                car.PressAccelerator(8);
+                car.PressBrake(8);
             }
 
         }        

@@ -3,3 +3,8 @@ C:\Users\mdu\Documents\MduApp\MyLibrary\bin\Debug\MyLibrary.pdb
 C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
 C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.dll
 C:\Users\mdu\Documents\MduApp\MyLibrary\obj\Debug\MyLibrary.pdb
+C:\Systems\Katas\MduApp_2016_04_06\MyLibrary\bin\Debug\MyLibrary.dll
+C:\Systems\Katas\MduApp_2016_04_06\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\Systems\Katas\MduApp_2016_04_06\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
+C:\Systems\Katas\MduApp_2016_04_06\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Systems\Katas\MduApp_2016_04_06\MyLibrary\obj\Debug\MyLibrary.pdb
