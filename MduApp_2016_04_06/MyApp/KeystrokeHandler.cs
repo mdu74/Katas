@@ -4,8 +4,13 @@ namespace MyApp
 {
     public class KeystrokeHandler
     {
+        public delegate void KeypressDelegate(char key);
+
+        public KeypressDelegate OnKey;
+
         public void Run()
         {
+
             Console.WriteLine("Keystroke handler is running. Press Q to Quit.");
 
             while (true)
@@ -16,8 +21,15 @@ namespace MyApp
                 {
                     break;
                 }
+
+                if (null != OnKey)
+                {
+                    OnKey(key);
+                }
             }
 
         }
+
+        
     }
 }
