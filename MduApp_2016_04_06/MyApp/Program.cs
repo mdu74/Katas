@@ -6,9 +6,13 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
+            QuitTracker terry = new QuitTracker{MyTracker = "Terry"};
+            QuitTracker alphios = new QuitTracker {MyTracker = "Alphios"};
+
             KeystrokeHandler keystrokeHandler = new KeystrokeHandler();
-            keystrokeHandler.OnKey = GotKey;
-            keystrokeHandler.OnQuitting = OnQuit;
+            keystrokeHandler.OnKey += GotKey;
+            keystrokeHandler.OnQuitting += alphios.MyTracker;
+            keystrokeHandler.OnQuitting += OnQuit;
 
             keystrokeHandler.Run();
         }

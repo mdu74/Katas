@@ -7,8 +7,8 @@ namespace MyApp
 
     public class KeystrokeHandler
     {
-        public KeypressDelegate OnKey;
-        public QuitDelegate OnQuitting;
+        public event KeypressDelegate OnKey;
+        public event QuitDelegate OnQuitting;
 
         public void Run()
         {
