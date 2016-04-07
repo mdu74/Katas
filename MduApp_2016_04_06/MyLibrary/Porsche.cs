@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace MyLibrary
 {
-    public class Porsche : Car
+    public class Porsche : CarBase
     {
         public Porsche() : base("Porsche", "Cayenne", 2015, Color.Black)
         {

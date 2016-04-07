@@ -11,7 +11,7 @@ namespace MyLibrary
         string Make { get;}
         string Model { get; }
         int Year { get; }
-        Color PaintColor { get; set; }
+        Color Paint { get; set; }
 
     }
 }

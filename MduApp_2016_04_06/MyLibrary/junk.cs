@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace MyLibrary
 {
-    public class Junk : Car
+    public class Junk : CarBase
     {
         public Junk() : base("Toyota", "Cressida", 1968, Color.Aqua)
         {

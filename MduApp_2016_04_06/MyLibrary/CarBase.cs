@@ -3,9 +3,9 @@ using System.Drawing;
 
 namespace MyLibrary
 {
-    public abstract class Car
+    public abstract class CarBase : ICar
     {
-        public Car(string make, string model, int year, Color paintColor)
+        public CarBase(string make, string model, int year, Color paintColor)
         {
             Make = make;
             Model = model;
