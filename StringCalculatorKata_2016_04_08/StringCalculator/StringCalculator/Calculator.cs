@@ -10,13 +10,18 @@ namespace StringCalculator
             {
                 return 0;
             }
-            if (input.Contains(","))
-            {
+
                 var stringOfNumbers = input.Split(',');
-                return int.Parse(stringOfNumbers[0]) + int.Parse(stringOfNumbers[1]);
+
+                var sum = 0;
+
+                foreach (string items in stringOfNumbers)
+                {
+                    sum += int.Parse(items);
+                }
+
+                return sum;
             }
-            return int.Parse(input);
-        }
         
     }
 }
