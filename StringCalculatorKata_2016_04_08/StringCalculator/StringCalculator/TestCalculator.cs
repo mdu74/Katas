@@ -35,6 +35,21 @@ namespace StringCalculator
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenTwoNumbers_ShouldSumOfNumbers()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var input = "1,2";
+            var expected = 3;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         private static Calculator CreateCalculator()
         {
             return new Calculator();
