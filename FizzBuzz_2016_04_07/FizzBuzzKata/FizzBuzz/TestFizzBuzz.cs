@@ -22,27 +22,13 @@ namespace FizzBuzz
             Assert.AreEqual(expected, result);
         }
 
-        [Test]
-        public void IsFizzBuzz_GivenFive_ShouldReturnBuzz()
+        [TestCase("3")]
+        [TestCase("6")]
+        [TestCase("9")]
+        public void IsFizzBuzz_GivenDivisibleByThree_ShouldReturnFizz(string input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "5";
-            var expected = "Buzz";
-            //---------------Assert Precondition----------------
-
-            //---------------Execute Test ----------------------
-            var result = fizzBuzz.IsFizzBuzz(input);
-            //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result);
-        }
-
-        [Test]
-        public void IsFizzBuzz_GivenDivisibleByThree_ShouldReturnFizz()
-        {
-            //---------------Set up test pack-------------------
-            var fizzBuzz = CreateFizzBuzz();
-            var input = "6";
             var expected = "Fizz";
             //---------------Assert Precondition----------------
 
