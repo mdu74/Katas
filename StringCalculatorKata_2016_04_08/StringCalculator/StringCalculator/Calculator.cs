@@ -10,18 +10,22 @@ namespace StringCalculator
             {
                 return 0;
             }
+            
+                var stringOfNumbers = input.Split('\n', ',');
 
-                var stringOfNumbers = input.Split(',');
+                return SumCalAdd(stringOfNumbers);
+        }
 
-                var sum = 0;
+        private static int SumCalAdd(string[] stringOfNumbers)
+        {
+            var sum = 0;
 
-                foreach (string items in stringOfNumbers)
-                {
-                    sum += int.Parse(items);
-                }
-
-                return sum;
+            foreach (string items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
             }
-        
+
+            return sum;
+        }
     }
 }
