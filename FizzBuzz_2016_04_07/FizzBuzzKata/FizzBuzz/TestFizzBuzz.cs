@@ -54,12 +54,13 @@ namespace FizzBuzz
             Assert.AreEqual(expected, result);
         }
 
-        [Test]
-        public void IsFizzBuzz_GivenDivisibleByBoth_ShouldReturnFizzBuzz()
+        [TestCase("15")]
+        [TestCase("30")]
+        [TestCase("75")]
+        public void IsFizzBuzz_GivenDivisibleByBoth_ShouldReturnFizzBuzz(string input)
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
-            var input = "15";
             var expected = "FizzBuzz";
             //---------------Assert Precondition----------------
 
