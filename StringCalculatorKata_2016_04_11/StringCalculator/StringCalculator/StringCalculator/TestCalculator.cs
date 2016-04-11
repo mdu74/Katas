@@ -11,15 +11,29 @@ namespace StringCalculator
         {
             //---------------Set up test pack-------------------
             var calculator = new Calculator();
-            var number = "";
+            var numbers = "";
             var expected = 0;
             //---------------Assert Precondition----------------
 
             //---------------Execute Test ----------------------
-            var result = calculator.Add(number);
+            var result = calculator.Add(numbers);
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenOneNumber_ShouldReturnNumber()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = new Calculator();
+            var numbers = "1";
+            var expected = 1;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
     }
 }
