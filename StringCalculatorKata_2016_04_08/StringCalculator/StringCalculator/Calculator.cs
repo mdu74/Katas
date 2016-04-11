@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿using System;
 
 namespace StringCalculator
 {
@@ -11,9 +11,10 @@ namespace StringCalculator
                 return 0;
             }
             
-                var stringOfNumbers = input.Split('\n', ',');
+            var stringOfNumbers = input.Split('\n', ',');
 
                 return SumCalAdd(stringOfNumbers);
+            
         }
 
         private static int SumCalAdd(string[] stringOfNumbers)
