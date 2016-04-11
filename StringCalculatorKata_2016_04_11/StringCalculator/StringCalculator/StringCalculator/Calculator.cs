@@ -9,15 +9,25 @@ namespace StringCalculator
             {
                 return 0;
             }
-            
-                var stringOfNumbers = numbers.Split(',');
 
-                var sum = 0;
-                foreach (var items in stringOfNumbers)
-                {
-                    sum +=int.Parse(items);
-                }
-                
+
+            if (numbers.StartsWith("//"))
+            {
+                numbers = numbers.Replace("//", "");
+                numbers = numbers.Substring(2);
+            }
+            var stringOfNumbers = numbers.Split(new[] { '\n', ',', ';' });
+            
+            return SumCalculator(stringOfNumbers); ;
+        }
+
+        private static int SumCalculator(string[] stringOfNumbers)
+        {
+            var sum = 0;
+            foreach (var items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
+            }
             return sum;
         }
     }

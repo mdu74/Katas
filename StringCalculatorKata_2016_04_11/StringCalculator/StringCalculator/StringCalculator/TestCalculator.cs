@@ -68,6 +68,36 @@ namespace StringCalculator
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenNewLine_ShouldReturnSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateNewCalculator();
+            var expected = 6;
+            var numbers = "1\n2,3";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Add_GivenSeparatedLine_ShouldReturnSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateNewCalculator();
+            var expected = 3;
+            var numbers ="//;\n1;2";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         private static Calculator CreateNewCalculator()
         {
             return new Calculator();
