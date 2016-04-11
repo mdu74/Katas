@@ -10,7 +10,16 @@ namespace StringCalculator
                 return 0;
             }
 
-            return int.Parse(numbers);
+            var stringOfNumbers = numbers.Split(',');
+
+            var sum = 0;
+
+            foreach (var items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
+            }
+
+            return sum;
         }
     }
 }
