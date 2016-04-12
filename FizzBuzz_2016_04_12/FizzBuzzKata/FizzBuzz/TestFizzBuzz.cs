@@ -22,7 +22,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public void Add_GivenAnyNumber_ShouldReturnNumber()
+        public void IsFizzBuzz_GivenAnyNumber_ShouldReturnNumber()
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
@@ -37,7 +37,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public void Add_GivenThree_ShouldReturnFizz()
+        public void IsFizzBuzz_GivenThree_ShouldReturnFizz()
         {
             //---------------Set up test pack-------------------
             var fizzBuzz = CreateFizzBuzz();
@@ -52,12 +52,27 @@ namespace FizzBuzz
         }
 
         [Test]
-        public void Add_GivenFive_ShouldReturnBuzz()
+        public void IsFizzBuzz_GivenFive_ShouldReturnBuzz()
         {
             //---------------Set up test pack-------------------
             var input = "5";
             var fizzBuzz = CreateFizzBuzz();
             var expected = "Buzz";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = fizzBuzz.IsFizzBuzz(input);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void IsFizzBuzz_GivenNumberDivisibleByThree_ShouldReturnFizz()
+        {
+            //---------------Set up test pack-------------------
+            var fizzBuzz = CreateFizzBuzz();
+            var input ="6";
+            var expected = "Fizz";
             //---------------Assert Precondition----------------
 
             //---------------Execute Test ----------------------
