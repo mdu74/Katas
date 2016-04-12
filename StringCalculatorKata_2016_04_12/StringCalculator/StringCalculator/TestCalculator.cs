@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Net.Mime;
+using NUnit.Framework;
 
 namespace StringCalculator
 {
@@ -95,6 +97,20 @@ namespace StringCalculator
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenNegativeInput_ShouldReturnException()
+        {
+            //---------------Set up test pack-------------------
+            var expected ="Negatives Not Allowed";
+            var numbers = "-1,2,-3,4";
+            var calculator = CreateCalculator();
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = Assert.Throws<ApplicationException>(()=> calculator.Add(numbers));
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result.Message);
+        }
         private static Calculator CreateCalculator()
         {
             var calculator = new Calculator();
