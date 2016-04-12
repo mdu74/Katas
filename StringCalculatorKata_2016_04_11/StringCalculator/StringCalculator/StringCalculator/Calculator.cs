@@ -18,7 +18,7 @@ namespace StringCalculator
             }
             var stringOfNumbers = numbers.Split(new[] { '\n', ',', ';' });
             
-            return SumCalculator(stringOfNumbers); ;
+            return SumCalculator(stringOfNumbers);
         }
 
         private static int SumCalculator(string[] stringOfNumbers)
