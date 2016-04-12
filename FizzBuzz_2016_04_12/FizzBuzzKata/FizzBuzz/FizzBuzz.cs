@@ -10,7 +10,7 @@ namespace FizzBuzz
                 return "Fizz";
             }
 
-            if (input == "5")
+            if (int.Parse(input)%5 == 0)
             {
                 return "Buzz";
             }
