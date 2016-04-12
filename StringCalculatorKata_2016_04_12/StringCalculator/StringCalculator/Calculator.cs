@@ -14,18 +14,19 @@ namespace StringCalculator
             {
                 return 0;
             }
-
-            if (numbers.Contains(","))
+            if (numbers.StartsWith("//"))
             {
-                return SumCalculation(numbers);
+                numbers = numbers.Replace("//", "");
+                numbers = numbers.Substring(2);
             }
-            
-            return int.Parse(numbers);
+
+            return SumCalculation(numbers);
         }
 
         private static int SumCalculation(string numbers)
         {
-            var stringOfNumbers = numbers.Split('\n',',');
+            var stringOfNumbers = numbers.Split(new[] { '\n', ',', ';' });
+
             int sum = 0;
             foreach (string items in stringOfNumbers)
             {
