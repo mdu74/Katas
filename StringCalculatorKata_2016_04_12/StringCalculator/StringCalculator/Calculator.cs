@@ -17,25 +17,22 @@ namespace StringCalculator
 
             if (numbers.Contains(","))
             {
-                var stringOfNumbers = numbers.Split(',');
-                int sum = 0;
-                foreach (string items in stringOfNumbers)
-                {
-                    sum += int.Parse(items);
-                }
-                return sum;
-            }
-
-            if (numbers.Contains(","))
-            {
-                var stringOfNumbers = numbers.Split(',');
-
-                var sum = int.Parse(stringOfNumbers[0]) + int.Parse(stringOfNumbers[1]);
-                
-                return sum;
+                return SumCalculation(numbers);
             }
             
             return int.Parse(numbers);
+        }
+
+        private static int SumCalculation(string numbers)
+        {
+            var stringOfNumbers = numbers.Split('\n',',');
+            int sum = 0;
+            foreach (string items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
+            }
+
+            return sum;
         }
     }
 }
