@@ -110,6 +110,22 @@ namespace StringCalculator
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result.Message);
         }
+
+        [Test]
+        public void Add_GivenSumIsBiggerThanAThousand_ShouldReturnNumber()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "3,1001";
+            var expected = 3;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         private static Calculator CreateCalculator()
         {
             return new Calculator();

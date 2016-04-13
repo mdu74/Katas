@@ -18,11 +18,12 @@ namespace StringCalculator
                 numbers = numbers.Substring(2);
             }
 
-            var stringOfNumbers = numbers.Split(new []{';', '\n', ',' });
-
+            var stringOfNumbers = numbers.Split(new []{';', '\n', ',', '*' });
+            
             CheckIfNegative(stringOfNumbers);
 
             return NumberSum(stringOfNumbers);
+            
         }
 
         private static int NumberSum(string[] stringOfNumbers)
@@ -30,10 +31,15 @@ namespace StringCalculator
             var sum = 0;
             foreach (var items in stringOfNumbers)
             {
-                sum += int.Parse(items);
+                
+                if (int.Parse(items)<=1000)
+                {
+                    sum += int.Parse(items);
+                }
             }
-
+            
             return sum;
+            
         }
 
         private static void CheckIfNegative(string[] stringOfNumbers)
@@ -44,6 +50,7 @@ namespace StringCalculator
             {
                 throw new ApplicationException("negative not allowed");
             }
+            
         }
     }
 }
