@@ -11,9 +11,12 @@
             if (numbers.Contains(","))
             {
                 var stringOfNumbers = numbers.Split(',');
-
-                int sum = int.Parse(stringOfNumbers[0]) + int.Parse(stringOfNumbers[1]);
-
+                var sum = 0;
+                foreach (var items in stringOfNumbers)
+                {
+                    sum += int.Parse(items);
+                }
+                
                 return sum; 
 
             }
