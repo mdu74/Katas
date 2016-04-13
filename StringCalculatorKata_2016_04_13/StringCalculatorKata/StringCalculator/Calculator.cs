@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StringCalculator
+﻿namespace StringCalculator
 {
     public class Calculator
     {
@@ -13,10 +7,18 @@ namespace StringCalculator
             if (numbers == "")
             {
                 return 0;
-                
             }
+            if (numbers.Contains(","))
+            {
+                var stringOfNumbers = numbers.Split(',');
 
+                int sum = int.Parse(stringOfNumbers[0]) + int.Parse(stringOfNumbers[1]);
+
+                return sum; 
+
+            }
             return int.Parse(numbers);
+
         }
     }
 }
