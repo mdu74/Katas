@@ -8,20 +8,21 @@
             {
                 return 0;
             }
-            if (numbers.Contains(","))
+            if (numbers.StartsWith("//"))
             {
-                var stringOfNumbers = numbers.Split('\n',',');
+                numbers = numbers.Replace("//","");
+                numbers = numbers.Substring(2);
+            }
+
+            var stringOfNumbers = numbers.Split(new []{';', '\n', ',' });
+
                 var sum = 0;
                 foreach (var items in stringOfNumbers)
                 {
                     sum += int.Parse(items);
                 }
                 
-                return sum; 
-
-            }
-            return int.Parse(numbers);
-
+                return sum;
         }
     }
 }
