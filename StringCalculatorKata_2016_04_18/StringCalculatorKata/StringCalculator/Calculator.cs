@@ -10,17 +10,23 @@ namespace StringCalculator
             {
                 return 0;
             }
-            if (numbers.Contains(","))
+            if (numbers.StartsWith("//"))
             {
-                var stringOfNumbers = numbers.Split(',','\n');
-                int sum = 0;
-                foreach (var items in stringOfNumbers)
-                {
-                    sum += int.Parse(items);
-                }
-                return sum;
+                numbers = numbers.Replace("//", "");
+                numbers = numbers.Substring(2);
             }
-            return int.Parse(numbers);
+            return SumCalculator(numbers);
+        }
+
+        private static int SumCalculator(string numbers)
+        {
+            var stringOfNumbers = numbers.Split(new [] { ';', ',', '\n' });
+            int sum = 0;
+            foreach (var items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
+            }
+            return sum;
         }
     }
 }
