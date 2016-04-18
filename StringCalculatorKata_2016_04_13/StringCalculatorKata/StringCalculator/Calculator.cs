@@ -12,13 +12,17 @@ namespace StringCalculator
                 return 0;
             }
 
+            //have a list that will hold your delimiters
             if (numbers.StartsWith("//"))
             {
+                //add new delimiters to a list
+
+                //get numbers 
                 numbers = numbers.Replace("//","");
                 numbers = numbers.Substring(2);
             }
-
-            var stringOfNumbers = numbers.Split(new []{';', '\n', ',', '*' });
+   
+            var stringOfNumbers = numbers.Split(new []{'*'}, StringSplitOptions.RemoveEmptyEntries);
             
             CheckIfNegative(stringOfNumbers);
 
@@ -28,18 +32,7 @@ namespace StringCalculator
 
         private static int NumberSum(string[] stringOfNumbers)
         {
-            var sum = 0;
-            foreach (var items in stringOfNumbers)
-            {
-                
-                if (int.Parse(items)<=1000)
-                {
-                    sum += int.Parse(items);
-                }
-            }
-            
-            return sum;
-            
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
         }
 
         private static void CheckIfNegative(string[] stringOfNumbers)
