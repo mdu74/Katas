@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices.ComTypes;
+﻿using System;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace StringCalculator
 {
@@ -21,6 +23,13 @@ namespace StringCalculator
         private static int SumCalculator(string numbers)
         {
             var stringOfNumbers = numbers.Split(new [] { ';', ',', '\n' });
+            var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
+
+            if (negatives.Any())
+            {
+                throw new ApplicationException("Negatives not allowed");
+            }
+
             int sum = 0;
             foreach (var items in stringOfNumbers)
             {
