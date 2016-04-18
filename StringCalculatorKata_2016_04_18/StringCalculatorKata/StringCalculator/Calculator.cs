@@ -1,4 +1,6 @@
-﻿namespace StringCalculator
+﻿using System.Runtime.InteropServices.ComTypes;
+
+namespace StringCalculator
 {
     public class Calculator
     {
@@ -7,6 +9,16 @@
             if (numbers == "")
             {
                 return 0;
+            }
+            if (numbers.Contains(","))
+            {
+                var stringOfNumbers = numbers.Split(',');
+                int sum = 0;
+                foreach (var items in stringOfNumbers)
+                {
+                    sum += int.Parse(items);
+                }
+                return sum;
             }
             return int.Parse(numbers);
         }
