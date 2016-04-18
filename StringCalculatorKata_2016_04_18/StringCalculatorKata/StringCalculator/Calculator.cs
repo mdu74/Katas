@@ -12,7 +12,7 @@ namespace StringCalculator
             }
             if (numbers.Contains(","))
             {
-                var stringOfNumbers = numbers.Split(',');
+                var stringOfNumbers = numbers.Split(',','\n');
                 int sum = 0;
                 foreach (var items in stringOfNumbers)
                 {
