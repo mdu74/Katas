@@ -33,7 +33,7 @@ namespace StringCalculator
             //---------------Execute Test ----------------------
             var result = calculator.Add(numbers);
             //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result); 
+            Assert.AreEqual(expected, result);
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace StringCalculator
             //---------------Execute Test ----------------------
             var result = calculator.Add(numbers);
             //---------------Test Result -----------------------
-            Assert.AreEqual(expected, result); 
+            Assert.AreEqual(expected, result);
         }
 
         [Test]
@@ -97,18 +97,63 @@ namespace StringCalculator
         }
 
         [Test]
-        public void Add_GivenNegativeInput_ShouldReturnErrorMessage()
+        public void Add_GivenNumbersWithANegativeNumber_ShouldThrowErrorMessage()
         {
             //---------------Set up test pack-------------------
             var calculator = CreateCalculator();
-            var expected = "Negatives not allowed";
+            var expected = "Negatives not allowed : -3";
+            var numbers = "1,2,-3";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = Assert.Throws<ApplicationException>(() => calculator.Add(numbers));
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result.Message);
+        }
+
+        [Test]
+        public void Add_GivenNumbersWithManyNegativeNumbers_ShouldThrowErrorMessage()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = "Negatives not allowed : -1,-3";
             var numbers = "-1,2,-3";
             //---------------Assert Precondition----------------
 
             //---------------Execute Test ----------------------
-            var result = Assert.Throws<ApplicationException>(()=>calculator.Add(numbers));
+            var result = Assert.Throws<ApplicationException>(() => calculator.Add(numbers));
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result.Message);
+        }
+
+        [Test]
+        public void Add_GivenNumbersBiggerThanAThousand_ShouldReturnExtraNumber()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = 2;
+            var numbers = "2,1001";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Add_GivenAnyLengthOfDelimiter_ShouldReturnSumOfNumbers()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = 6;
+            var numbers = "//[***]\n1***2***3";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
         }
         private static Calculator CreateCalculator()
         {
