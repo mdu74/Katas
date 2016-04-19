@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using NUnit.Framework;
 using NUnit.Framework.Constraints;
 
 namespace StringCalculator
@@ -14,15 +16,22 @@ namespace StringCalculator
                 return 0;
             }
             
+            var delimiters = new List<String> {",","\n"};
             if (numbers.StartsWith("//"))
             {
-                numbers = numbers.Replace("//", "");
-                numbers = numbers.Substring(2);
+                var indexOfNewLine = numbers.IndexOf('\n');
+                delimiters.AddRange(numbers.Substring(0, indexOfNewLine).Replace("//", "").Split(new []{'[',']'}, StringSplitOptions.RemoveEmptyEntries));
+                numbers = numbers.Substring(indexOfNewLine + 1);
             }
-            var stringOfNumbers = numbers.Split(new[] { ',', '\n', ';' });
+            var stringOfNumbers = SplitDelimiters(numbers, delimiters);
             NegativeNumbers(stringOfNumbers);
             return BiggerThanAThousand(stringOfNumbers);
 
+        }
+
+        private static string[] SplitDelimiters(string numbers, List<string> delimiters)
+        {
+            return numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
         }
 
         private static void NegativeNumbers(string[] stringOfNumbers)

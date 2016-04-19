@@ -125,6 +125,21 @@ namespace StringCalculator
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void Add_GivenAnyLengthOfDelimiters_ShouldReturnSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "//[***]\n1***2***3";
+            var expected = 6;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
         private static Calculator CreateCalculator()
         {
             return new Calculator();
