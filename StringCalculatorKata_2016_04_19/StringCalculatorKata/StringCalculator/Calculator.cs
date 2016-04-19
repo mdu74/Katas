@@ -19,25 +19,25 @@ namespace StringCalculator
                 numbers = numbers.Replace("//", "");
                 numbers = numbers.Substring(2);
             }
-            
-            return SumCalculator(numbers);
+            var stringOfNumbers = numbers.Split(new[] { ',', '\n', ';' });
+            NegativeNumbers(stringOfNumbers);
+            return BiggerThanAThousand(stringOfNumbers);
+
         }
 
-        private static int SumCalculator(string numbers)
+        private static void NegativeNumbers(string[] stringOfNumbers)
         {
-            var stringOfNumbers = numbers.Split(new []{ ',', '\n', ';' });
             var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
+
             if (negatives.Any())
             {
                 throw new ApplicationException("Negatives not allowed");
             }
+        }
 
-            int sum = 0;
-            foreach (var items in stringOfNumbers)
-            {
-                sum += int.Parse(items);
-            }
-            return sum;
+        private static int BiggerThanAThousand(string[] stringOfNumbers)
+        {
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
         }
     }
 }

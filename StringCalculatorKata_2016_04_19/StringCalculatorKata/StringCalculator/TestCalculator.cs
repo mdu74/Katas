@@ -111,6 +111,20 @@ namespace StringCalculator
             Assert.AreEqual(expected, result.Message);
         }
 
+        [Test]
+        public void Add_GivenNumberGreaterThanOneThousand_ShouldIgnoredNumber()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = 2;
+            var numbers = "1001,2";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
         private static Calculator CreateCalculator()
         {
             return new Calculator();
