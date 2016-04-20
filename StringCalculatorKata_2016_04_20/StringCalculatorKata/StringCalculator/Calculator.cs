@@ -30,12 +30,8 @@ namespace StringCalculator
                 throw new ApplicationException ("Negatives Not Allowed");
             }
 
-            int sum = 0;
-            foreach (var items in stringOfNumbers)
-            {
-                sum += int.Parse(items);
-            }
-            return sum;
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
+            
         }
     }
 }
