@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace StringCalculator
 {
@@ -21,8 +20,9 @@ namespace StringCalculator
                 var indexOfNewLine = numbers.IndexOf('\n');
 
                 delimiters.AddRange(numbers.Substring(0, indexOfNewLine)
-                    .Replace("//","").Split(new[] { '[', ']' }, 
-                    StringSplitOptions.RemoveEmptyEntries));
+                    .Replace("//", "")
+                    .Split(new[] { '[', ']' }, 
+                   StringSplitOptions.RemoveEmptyEntries));
 
                 numbers = numbers.Substring(indexOfNewLine + 1);
             }
