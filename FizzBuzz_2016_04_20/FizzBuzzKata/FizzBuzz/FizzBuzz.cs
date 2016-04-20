@@ -10,7 +10,7 @@ namespace FizzBuzz
     {
         public string IsFizzBuzz(string input)
         {
-            return "1";
+            return input;
         }
     }
 }
