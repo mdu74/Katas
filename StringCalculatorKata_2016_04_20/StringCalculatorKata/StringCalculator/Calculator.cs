@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace StringCalculator
 {
@@ -15,22 +14,32 @@ namespace StringCalculator
                 return 0;
             }
 
+            var delimiters = new List<string> { ",", "\n" };
+
             if (numbers.StartsWith("//"))
             {
-                numbers = numbers.Replace("//", "");
-                numbers = numbers.Substring(2);
+                var indexOfNewLine = numbers.IndexOf('\n');
 
+                delimiters.AddRange(numbers.Substring(0, indexOfNewLine)
+                    .Replace("//","").Split(new[] { '[', ']' }, 
+                    StringSplitOptions.RemoveEmptyEntries));
+
+                numbers = numbers.Substring(indexOfNewLine + 1);
             }
 
-            var stringOfNumbers = numbers.Split(new[] { ',', '\n', ';' });
-            var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
+            var stringOfNumbers = numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
+
+            var negatives = stringOfNumbers
+                .Where(n => int.Parse(n) < 0);
 
             if (negatives.Any())
             {
                 throw new ApplicationException ("Negatives Not Allowed");
             }
 
-            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
+            return stringOfNumbers
+                .Where(items => int.Parse(items) <= 1000)
+                .Sum(items => int.Parse(items));
             
         }
     }

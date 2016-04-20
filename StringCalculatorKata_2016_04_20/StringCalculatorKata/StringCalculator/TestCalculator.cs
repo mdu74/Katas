@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace StringCalculator
@@ -122,6 +118,21 @@ namespace StringCalculator
             var calculator = CreateCalculator();
             var numbers = "1001,2";
             var expected = 2;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Add_GivenDelimiterOfAnyLength_ShouldReturnSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "//[***]\n1***2***3";
+            var expected = 6;
             //---------------Assert Precondition----------------
 
             //---------------Execute Test ----------------------
