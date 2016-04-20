@@ -10,23 +10,32 @@ namespace FizzBuzz
     {
         public string IsFizzBuzz(string input)
         {
-            if (int.Parse(input) % 3 == 0 && int.Parse(input) % 5 == 0)
+            if (DivisibleByThree(input) && DivisibleByFive(input))
             {
                 return "FizzBuzz";
             }
 
-            if (int.Parse(input)%3 == 0)
+            if (DivisibleByThree(input))
             {
                 return "Fizz";
             }
 
-            if (int.Parse(input)%5 == 0)
+            if (DivisibleByFive(input))
             {
                 return "Buzz";
             }
-
             
             return input;
+        }
+
+        private static bool DivisibleByFive(string input)
+        {
+            return int.Parse(input)%5 == 0;
+        }
+
+        private static bool DivisibleByThree(string input)
+        {
+            return int.Parse(input)%3 == 0;
         }
     }
 }
