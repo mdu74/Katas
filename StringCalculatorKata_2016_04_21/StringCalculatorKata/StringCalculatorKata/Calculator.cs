@@ -10,19 +10,19 @@ namespace StringCalculatorKata
             {
                 return 0;
             }
-            if (numbers.Contains(","))
+            if (numbers.StartsWith("//"))
             {
-                var sum = 0;
-                var stringOfNumbers = numbers.Split(',', '\n');
-
-                foreach (var items in stringOfNumbers)
-                {
-                    sum += int.Parse(items);
-                }
-                return sum;
-
+                numbers = numbers.Replace("//", "");
+                numbers = numbers.Substring(2);
             }
-            return int.Parse(numbers);
+            var sum = 0;
+            var stringOfNumbers = numbers.Split(new[] { ';', ',', '\n' });
+
+            foreach (var items in stringOfNumbers)
+            {
+                sum += int.Parse(items);
+            }
+            return sum;
         }
     }
 }
