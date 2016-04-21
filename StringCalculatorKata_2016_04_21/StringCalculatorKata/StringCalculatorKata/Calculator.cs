@@ -30,7 +30,7 @@ namespace StringCalculatorKata
             {
                 sum += int.Parse(items);
             }
-            return sum;
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
         }
     }
 }
