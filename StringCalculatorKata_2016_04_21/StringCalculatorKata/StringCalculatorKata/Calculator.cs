@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using NUnit.Framework;
 
 namespace StringCalculatorKata
 {
@@ -17,6 +19,12 @@ namespace StringCalculatorKata
             }
             var sum = 0;
             var stringOfNumbers = numbers.Split(new[] { ';', ',', '\n' });
+
+            var negatives = stringOfNumbers.Where(n=>int.Parse(n)<0);
+            if (negatives.Any())
+            {
+                throw new ApplicationException("Negatives not allowed");
+            }
 
             foreach (var items in stringOfNumbers)
             {
