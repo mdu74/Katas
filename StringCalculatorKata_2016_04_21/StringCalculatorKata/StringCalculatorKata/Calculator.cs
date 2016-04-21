@@ -13,7 +13,7 @@ namespace StringCalculatorKata
             if (numbers.Contains(","))
             {
                 var sum = 0;
-                var stringOfNumbers = numbers.Split(',');
+                var stringOfNumbers = numbers.Split(',', '\n');
 
                 foreach (var items in stringOfNumbers)
                 {

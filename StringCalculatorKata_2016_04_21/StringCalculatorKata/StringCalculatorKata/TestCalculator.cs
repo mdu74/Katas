@@ -65,6 +65,20 @@ namespace StringCalculatorKata
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenNewLineBetweenNumbers_ShouldReturnsSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = 6;
+            var numbers = "1\n2,3";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
         private static Calculator CreateCalculator()
         {
             return new Calculator();
