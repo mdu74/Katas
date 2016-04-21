@@ -141,6 +141,21 @@ namespace StringCalculatorKata
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Add_GivenMultipleDelimiter_ShouldReturnsSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var expected = 6;
+            var numbers = "//[*][%]\n1*2%3";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         private static Calculator CreateCalculator()
         {
             return new Calculator();

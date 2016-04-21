@@ -17,7 +17,7 @@ namespace StringCalculatorKata
             if (numbers.StartsWith("//"))
             {
                 var indexOfNewLine = numbers.IndexOf('\n');
-                delimiters.AddRange(numbers.Substring(0, indexOfNewLine).Replace("//", "").Split('[',']'));
+                delimiters.AddRange(numbers.Substring(0, indexOfNewLine).Replace("//", "").Split(new []{'[',']'}, StringSplitOptions.RemoveEmptyEntries));
                 numbers = numbers.Substring(indexOfNewLine + 1);
             }
             var stringOfNumbers = numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
