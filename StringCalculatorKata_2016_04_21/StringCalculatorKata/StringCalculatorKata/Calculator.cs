@@ -17,17 +17,40 @@ namespace StringCalculatorKata
             if (numbers.StartsWith("//"))
             {
                 var indexOfNewLine = numbers.IndexOf('\n');
-                delimiters.AddRange(numbers.Substring(0, indexOfNewLine).Replace("//", "").Split(new []{'[',']'}, StringSplitOptions.RemoveEmptyEntries));
+
+                DelimiterManager(numbers, delimiters, indexOfNewLine);
+
                 numbers = numbers.Substring(indexOfNewLine + 1);
             }
+
             var stringOfNumbers = numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
-            var negatives = stringOfNumbers.Where(n=>int.Parse(n)<0);
+
+            CheckForNegatives(stringOfNumbers);
+
+            return CheckIfGreaterThanAThousand(stringOfNumbers);
+        }
+
+        private static void DelimiterManager(string numbers, List<string> delimiters, int indexOfNewLine)
+        {
+            delimiters.AddRange(
+                numbers.Substring(0, indexOfNewLine)
+                    .Replace("//", "")
+                    .Split(new[] {'[', ']'},
+                        StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        private static int CheckIfGreaterThanAThousand(string[] stringOfNumbers)
+        {
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
+        }
+
+        private static void CheckForNegatives(string[] stringOfNumbers)
+        {
+            var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
             if (negatives.Any())
             {
                 throw new ApplicationException("Negatives not allowed");
             }
-
-            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
         }
     }
 }
