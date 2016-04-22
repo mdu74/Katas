@@ -24,5 +24,25 @@ namespace StringCalculator
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void Added_GivenSingleNumber_ShouldReturnNumber()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "2";
+            var expected = 2;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
+        private static Calculator CreateCalculator()
+        {
+            return new Calculator();
+        }
     }
 }
