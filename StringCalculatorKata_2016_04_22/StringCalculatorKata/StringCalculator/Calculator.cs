@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace StringCalculator
 {
@@ -14,7 +15,6 @@ namespace StringCalculator
             {
                 return 0;
             }
-
             
             if (numbers.Contains(","))
             {
@@ -24,8 +24,14 @@ namespace StringCalculator
                 {
                     sum += int.Parse(items);
                 }
+                var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
+                if (negatives.Any())
+                {
+                    throw new ApplicationException("Negatives not allowed");
+                }
                 return sum;
             }
+
             return int.Parse(numbers);
             
         }

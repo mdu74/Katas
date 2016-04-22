@@ -84,6 +84,22 @@ namespace StringCalculator
             //---------------Test Result -----------------------
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void Add_GivenNegativeNumbers_ShouldReturnErrorMessage()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "-1,-2,3";
+            var expected = "Negatives not allowed";
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = Assert.Throws<ApplicationException>(()=>calculator.Add(numbers));
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result.Message);
+        }
+
         private static Calculator CreateCalculator()
         {
             return new Calculator();
