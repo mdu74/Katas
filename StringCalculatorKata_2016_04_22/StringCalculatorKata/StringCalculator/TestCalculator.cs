@@ -40,6 +40,21 @@ namespace StringCalculator
             Assert.AreEqual(expected, result);
         }
 
+        [Test]
+        public void Added_GivenTwoNumbers_ShouldReturnSum()
+        {
+            //---------------Set up test pack-------------------
+            var calculator = CreateCalculator();
+            var numbers = "1,2";
+            var expected = 3;
+            //---------------Assert Precondition----------------
+
+            //---------------Execute Test ----------------------
+            var result = calculator.Add(numbers);
+            //---------------Test Result -----------------------
+            Assert.AreEqual(expected, result);
+        }
+
         private static Calculator CreateCalculator()
         {
             return new Calculator();
