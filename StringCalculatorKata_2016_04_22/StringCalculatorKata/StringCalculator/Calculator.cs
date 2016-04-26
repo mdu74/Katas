@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-
 namespace StringCalculator
 {
     public class Calculator
@@ -15,25 +11,32 @@ namespace StringCalculator
             {
                 return 0;
             }
-            
-            if (numbers.Contains(","))
-            {
-                var sum = 0;
-                var stringOfNumbers = numbers.Split(',', '\n');
-                foreach (var items in stringOfNumbers)
-                {
-                    sum += int.Parse(items);
-                }
-                var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
-                if (negatives.Any())
-                {
-                    throw new ApplicationException("Negatives not allowed");
-                }
-                return sum;
-            }
+            var delimiters = new List<string> { ",", "\n" };
 
-            return int.Parse(numbers);
+            if (numbers.StartsWith("//"))
+            {
+                var indexOfNewLine = numbers.IndexOf('\n');
+                delimiters.AddRange(numbers.Substring(0, indexOfNewLine).Replace("//","").Split(new[] { '[', ']' }));
+                //numbers = numbers.Replace("//", "");
+                //numbers = numbers.Substring(2);
+                numbers = numbers.Substring(indexOfNewLine + 1);
+            }
             
+            var stringOfNumbers = numbers.Split(delimiters.ToArray(), StringSplitOptions.None);
+                
+            CheckForNegative(stringOfNumbers);
+
+            return stringOfNumbers.Where(items => int.Parse(items) <= 1000).Sum(items => int.Parse(items));
+            
+        }
+
+        private static void CheckForNegative(string[] stringOfNumbers)
+        {
+            var negatives = stringOfNumbers.Where(n => int.Parse(n) < 0);
+            if (negatives.Any())
+            {
+                throw new ApplicationException("Negatives not allowed");
+            }
         }
     }
 }
